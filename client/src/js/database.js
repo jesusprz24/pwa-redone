@@ -25,7 +25,7 @@ export const putDb = async (content) => console.error('putDb not implemented');
 export const getDb = async () => console.error('getDb not implemented');
   const db = await initdb();
   const tx = db.transaction('jate');
-  const store = tx.objectStore('jate');
+  const store = tx.objectStore('jate', 'readonly');
   const allContent = await store.getAll();
   console.log('Content retreived from database');
   return allContent;

@@ -20,9 +20,14 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        filename: './indexd.html',
+        filename: './index.html',
         chunks: ['main']
-      })
+      }),
+      new InjectManifest({
+        src: './src-sw.js',
+        dest: './src.sw.js',
+      }),
+      
       
     ],
 
